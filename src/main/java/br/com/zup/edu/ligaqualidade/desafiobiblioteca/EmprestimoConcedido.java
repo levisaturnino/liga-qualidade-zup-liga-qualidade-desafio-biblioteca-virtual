@@ -6,6 +6,7 @@ import java.util.Optional;
 
 import br.com.zup.edu.ligaqualidade.desafiobiblioteca.pronto.DadosExemplar;
 import br.com.zup.edu.ligaqualidade.desafiobiblioteca.pronto.DadosUsuario;
+import br.com.zup.edu.ligaqualidade.desafiobiblioteca.pronto.TipoUsuario;
 
 public class EmprestimoConcedido {
 
@@ -16,6 +17,8 @@ public class EmprestimoConcedido {
 	public final LocalDate dataPrevistaDevolucao;
 	// instante da devolução
 	private Instant momentoDevolucao;
+
+	public static int emprestimoPadrao = 0;
 
 	/**
 	 * 
@@ -28,6 +31,14 @@ public class EmprestimoConcedido {
 		this.idUsuario = idUsuario;
 		this.idExemplar = idExemplar;
 		this.dataPrevistaDevolucao = dataPrevistaDevolucao;
+
+		if(DadosUsuario.consulteUsuarioId(idUsuario) == TipoUsuario.PADRAO){
+			if(emprestimoPadrao >= 0  && emprestimoPadrao <= 5 ){
+				emprestimoPadrao += 1;
+			}else{
+			//	throw new IllegalStateException("Você não pode pegar mais livro emprestado");
+			}
+		}
 	}
 	
 	public void registraDevolucao() {

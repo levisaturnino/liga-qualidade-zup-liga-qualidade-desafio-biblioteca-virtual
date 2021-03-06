@@ -1,5 +1,6 @@
 package br.com.zup.edu.ligaqualidade.desafiobiblioteca;
 
+import br.com.zup.edu.ligaqualidade.desafiobiblioteca.pronto.DadosUsuario;
 import br.com.zup.edu.ligaqualidade.desafiobiblioteca.pronto.TipoExemplar;
 
 public class DadosEmprestimo {
@@ -17,6 +18,7 @@ public class DadosEmprestimo {
 		this.tempo = tempo;
 		this.tipoExemplar = tipoExemplar;
 		this.idPedido = idPedido;
+
 	}
 
 }
