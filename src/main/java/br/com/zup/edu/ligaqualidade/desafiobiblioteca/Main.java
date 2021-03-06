@@ -5,6 +5,7 @@ import java.time.LocalDate;
 import java.util.HashSet;
 import java.util.Set;
 
+import br.com.zup.edu.ligaqualidade.desafiobiblioteca.modifique.Solucao;
 import br.com.zup.edu.ligaqualidade.desafiobiblioteca.pronto.DadosExemplar;
 import br.com.zup.edu.ligaqualidade.desafiobiblioteca.pronto.DadosLivro;
 import br.com.zup.edu.ligaqualidade.desafiobiblioteca.pronto.DadosUsuario;
@@ -437,6 +438,8 @@ public class Main {
 		devolucoes.add(dadosDevolucao21);
 
 		dataParaSerConsideradaNaExpiracao = dataManipulacao.plusDays(15);
+
+		Solucao.executa(livros,exemplares,usuarios,emprestimos,devolucoes,dataParaSerConsideradaNaExpiracao);
 
 	}
 
